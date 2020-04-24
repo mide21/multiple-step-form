@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ff9999;
+}
+
+.wrapper {
+  text-align: center;
+  background-color: #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 10px;
+  margin: 80px auto;
+  padding: 0 0 40px 0;
+  width: 60%;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.input {
+  font-size: 17px !important;
+  margin-top: 60px !important;
+  width: 300px !important;
+}
+
+.btn {
+  margin: 40px !important;
+}
+
+.step {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  background-color: #f44336;
+  margin: 9px 6px;
+}
+
+.step-o {
+  opacity: 1;
+}
+
+.MuiFormLabel-root {
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #f44336 !important;
+}
+
+.MuiInput-underline::before {
+  border-bottom: 1px solid rgb(224, 224, 224) !important;
+}
+
+.MuiTypography-h6 {
+  font-family: 'Squada One', cursive !important;
+}
+
+.MuiListItemText-multiline {
+  text-align: center !important;
+}
