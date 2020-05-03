@@ -12,6 +12,17 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { createMuiTheme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
+
+const MyButton = styled(Button)({
+    margin:'40px',
+});
+
+const MyFormControl = styled(FormControl)({
+    fontSize: '17px',
+    marginTop: '60px',
+    width: '300px',
+});
 
 const theme = createMuiTheme({
     palette: {
@@ -43,7 +54,6 @@ export class PersonalDetails extends Component {
 
     render() {
         const { values, handleChange, togglePasswordVisiblity, isPasswordShown } = this.props;
-
         return (
             <ThemeProvider theme={theme} >
                 <div className="wrapper">
@@ -54,7 +64,7 @@ export class PersonalDetails extends Component {
                         </Typography>
                         </Toolbar>
                     </AppBar>
-                    <FormControl className="input">
+                    <MyFormControl >
                         <InputLabel htmlFor="standard-adornment-username">Username</InputLabel>
                         <Input
                             id="standard-adornment-username"
@@ -62,9 +72,9 @@ export class PersonalDetails extends Component {
                             value={values.username}
                             onChange={handleChange('username')}
                         />
-                    </FormControl>
+                    </MyFormControl>
                     <br />
-                    <FormControl className="input">
+                    <MyFormControl>
                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                         <Input
                             id="standard-adornment-password"
@@ -82,20 +92,18 @@ export class PersonalDetails extends Component {
                                 </InputAdornment>
                             }
                         />
-                    </FormControl>
+                    </MyFormControl>
                     <br />
-                    <Button
+                    <MyButton
                         onClick={this.back}
                         color='secondary'
-                        className="btn"
                         variant="contained"
-                    >Previous</Button>
-                    <Button
+                    >Previous</MyButton>
+                    <MyButton
                         onClick={this.continue}
                         color='primary'
-                        className="btn"
                         variant="contained"
-                    >Next</Button>
+                    >Next</MyButton>
                     <div>
                         <span className="step" />
                         <span className="step" />

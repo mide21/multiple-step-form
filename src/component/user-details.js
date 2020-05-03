@@ -6,6 +6,17 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
+
+const MyTextField = styled(TextField)({
+    fontSize: '17px',
+    marginTop: '60px',
+    width: '300px',
+});
+
+const MyButton = styled(Button)({
+    margin: '40px',
+});
 
 const theme = createMuiTheme({
     palette: {
@@ -43,36 +54,32 @@ export class UserDetails extends Component {
                         </Toolbar>
                     </AppBar>
                     <form noValidate autoComplete="off">
-                        <TextField
+                        <MyTextField
                             id="standard-basic"
                             label="First Name"
                             onChange={handleChange('firstName')}
                             defaultValue={values.firstName}
-                            className="input"
                         />
                         <br />
-                        <TextField
+                        <MyTextField
                             id="standard-basic"
                             label="Last Name"
                             onChange={handleChange('lastName')}
                             defaultValue={values.lastName}
-                            className="input"
                         />
                         <br />
-                        <TextField
+                        <MyTextField
                             id="standard-basic"
                             label="Email"
                             onChange={handleChange('email')}
                             defaultValue={values.email}
-                            className="input"
                         />
                         <br />
-                        <Button
+                        <MyButton
                             onClick={this.continue}
                             color='primary'
-                            className="btn"
                             variant="contained"
-                        >Next</Button>
+                        >Next</MyButton>
                     </form>
                     <div>
                         <span className="step step-o" />

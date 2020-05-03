@@ -8,6 +8,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
+import { styled } from '@material-ui/core/styles';
+
+const MyButton = styled(Button)({
+    margin: '40px',
+});
 
 const theme = createMuiTheme({
     palette: {
@@ -93,18 +98,16 @@ export class Confirm extends Component {
                         </ListItem>
                     </List>
                     <br />
-                    <Button
+                    <MyButton
                         onClick={this.back}
                         color='secondary'
-                        className="btn"
                         variant="contained"
-                    >Previous</Button>
-                    <Button
+                    >Previous</MyButton>
+                    <MyButton
                         onClick={this.continue}
                         color='primary'
-                        className="btn"
                         variant="contained"
-                    >Confirm & Continue</Button>
+                    >Confirm & Continue</MyButton>
                 </div>
             </ThemeProvider>
         )
