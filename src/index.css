@@ -19,16 +19,6 @@ body {
   min-height: 300px;
 }
 
-.input {
-  font-size: 17px !important;
-  margin-top: 60px !important;
-  width: 300px !important;
-}
-
-.btn {
-  margin: 40px !important;
-}
-
 .step {
   width: 15px;
   height: 15px;
