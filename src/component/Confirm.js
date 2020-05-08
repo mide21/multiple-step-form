@@ -17,15 +17,15 @@ const MyButton = styled(Button)({
 const theme = createMuiTheme({
     palette: {
         primary: {
-            light: '#ff7961',
-            main: '#f44336',
-            dark: '#ba000d',
+            light: '#7c43db',
+            main: '#4a148c',
+            dark: '#12005e',
             contrastText: '#fff',
         },
         secondary: {
-            light: '53ff1a',
-            main: '#2db300',
-            dark: '#1a6600',
+            light: '#ffb2ff',
+            main: '#ea80fc',
+            dark: '#b64fc8',
             contrastText: '#000',
         },
     },
