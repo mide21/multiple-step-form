@@ -5,7 +5,7 @@ body {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ff9999;
+  background-color: #b388ff;
 }
 
 .wrapper {
@@ -26,12 +26,13 @@ body {
   border-radius: 50%;
   display: inline-block;
   opacity: 0.5;
-  background-color: #f44336;
+  background-color: #7c43db;
   margin: 9px 6px;
 }
 
 .step-o {
-  opacity: 1;
+  background-color: #12005e !important;
+  opacity:0.9;
 }
 
 .MuiFormLabel-root {
@@ -39,7 +40,7 @@ body {
 }
 
 .MuiFormLabel-root.Mui-focused {
-  color: #f44336 !important;
+  color: #4a148c !important;
 }
 
 .MuiInput-underline::before {
