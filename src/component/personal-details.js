@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { styled } from '@material-ui/core/styles';
+import MobileStepper from '@material-ui/core/MobileStepper';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 const MyTextField = styled(TextField)({
-    fontSize: '17px',
-    marginTop: '60px',
-    width: '300px',
+    fontSize: 17,
+    marginTop: 60,
+    width: 300,
 });
 
 const MyButton = styled(Button)({
-    margin: '40px',
+    margin: 40
+});
+
+const Stepper = styled(MobileStepper)({
+    maxWidth: 500,
+    marginLeft: 130,
+    backgroundColor: '#f3f3f3'
 });
 
 const theme = createMuiTheme({
@@ -47,7 +56,7 @@ export class PersonalDetails extends Component {
     }
 
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange, } = this.props;
         return (
             <ThemeProvider theme={theme} >
                 <div className="wrapper">
@@ -58,7 +67,6 @@ export class PersonalDetails extends Component {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <form noValidate autoComplete="off">
                         <MyTextField
                             id="standard-basic"
                             label="Occupation"
@@ -80,24 +88,25 @@ export class PersonalDetails extends Component {
                             defaultValue={values.bio}
                         />
                         <br />
-                        <MyButton
-                            onClick={this.back}
-                            color='secondary'
-                            className="btn"
-                            variant="contained"
-                        >Previous</MyButton>
-                        <MyButton
-                            onClick={this.continue}
-                            color='primary'
-                            className="btn"
-                            variant="contained"
-                        >Next</MyButton>
-                    </form>
-                    <div>
-                        <span className="step" />
-                        <span className="step step-o" />
-                        <span className="step" />
-                    </div>
+                        <Stepper
+                        size="large"
+                        variant="dots"
+                        steps={3}
+                        position="static"
+                        activeStep={1}
+                        backButton={
+                            <MyButton size="medium" onClick={this.back} variant="contained" color="secondary">
+                                <KeyboardArrowLeft />
+                                    Previous
+                            </MyButton>
+                        }
+                        nextButton={
+                            <MyButton size="medium" onClick={this.continue} variant="contained" color="primary" >
+                                    Next
+                                <KeyboardArrowRight />
+                            </MyButton>
+                        }
+                    />
                 </div>
             </ThemeProvider>
         )
