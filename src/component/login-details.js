@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,18 +13,27 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { styled } from '@material-ui/core/styles';
+import MobileStepper from '@material-ui/core/MobileStepper';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
-const MyButton = styled(Button)({
-    margin:'40px',
-});
 
 const MyFormControl = styled(FormControl)({
-    fontSize: '17px',
-    marginTop: '60px',
-    width: '300px',
+    fontSize: 17,
+    marginTop: 60,
+    width: 300,
 });
+
+const MyButton = styled(Button)({
+    margin: 40
+});
+
+const Stepper = styled(MobileStepper)({
+    maxWidth: 500,
+    marginLeft: 130,
+    backgroundColor: '#f3f3f3'
+});
+
 
 const theme = createMuiTheme({
     palette: {
@@ -53,7 +64,7 @@ export class PersonalDetails extends Component {
     }
 
     render() {
-        const { values, handleChange, togglePasswordVisiblity, isPasswordShown } = this.props;
+        const { values, handleChange, togglePasswordVisiblity, isPasswordShown, } = this.props;
         return (
             <ThemeProvider theme={theme} >
                 <div className="wrapper">
@@ -73,46 +84,50 @@ export class PersonalDetails extends Component {
                             onChange={handleChange('username')}
                         />
                     </MyFormControl>
-                    <br />
-                    <MyFormControl>
-                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                        <Input
-                            id="standard-adornment-password"
-                            type={isPasswordShown ? 'text' : 'password'}
-                            value={values.password}
-                            onChange={handleChange('password')}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="toggle password visibility"
-                                        onClick={togglePasswordVisiblity}
-                                    >
-                                        {isPasswordShown ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
+                        <br />
+                        <MyFormControl>
+                            <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                            <Input
+                                id="standard-adornment-password"
+                                type={isPasswordShown ? 'text' : 'password'}
+                                value={values.password}
+                                onChange={handleChange('password')}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={togglePasswordVisiblity}
+                                        >
+                                            {isPasswordShown ? <Visibility /> : <VisibilityOff />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                            />
+                        </MyFormControl>
+                        <br />
+                        <Stepper
+                            size="large"
+                            variant="dots"
+                            steps={3}
+                            position="static"
+                            activeStep={2}
+                            backButton={
+                                <MyButton size="medium" onClick={this.back} variant="contained" color="secondary">
+                                    <KeyboardArrowLeft />
+                                    Previous
+                            </MyButton>
+                            }
+                            nextButton={
+                                <MyButton size="medium" onClick={this.continue} variant="contained" color="primary" >
+                                    Next
+                                <KeyboardArrowRight />
+                                </MyButton>
                             }
                         />
-                    </MyFormControl>
-                    <br />
-                    <MyButton
-                        onClick={this.back}
-                        color='secondary'
-                        variant="contained"
-                    >Previous</MyButton>
-                    <MyButton
-                        onClick={this.continue}
-                        color='primary'
-                        variant="contained"
-                    >Next</MyButton>
-                    <div>
-                        <span className="step" />
-                        <span className="step" />
-                        <span className="step step-o" />
-                    </div>
                 </div>
             </ThemeProvider>
-        )
-    }
-}
-
-export default PersonalDetails
+                )
+            }
+        }
+        
+        export default PersonalDetails

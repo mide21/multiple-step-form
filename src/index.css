@@ -19,20 +19,15 @@ body {
   min-height: 300px;
 }
 
-.step {
-  width: 15px;
-  height: 15px;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-  background-color: #7c43db;
-  margin: 9px 6px;
+.MuiMobileStepper-dot {
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50% !important;
+  margin: 9px 6px !important;
 }
 
-.step-o {
-  background-color: #12005e !important;
-  opacity:0.9;
+.MuiMobileStepper-dotActive {
+  background-color: #b64fc8 !important;
 }
 
 .MuiFormLabel-root {

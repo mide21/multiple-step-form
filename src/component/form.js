@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import UserDetails from './user-details';
 import PersonalDetails from './personal-details';
 import LoginDetails from './login-details';
-import Confirm from './Confirm';
+import Confirm from './confirm';
 import Success from './success';
 
 export class Form extends Component {
     state = {
-        isPasswordShown: false,
-        step: 1,
         firstName: '',
         lastName: '',
         email: '',
@@ -16,7 +14,9 @@ export class Form extends Component {
         city: '',
         bio: '',
         username: '',
-        password: ''
+        password: '',
+        isPasswordShown: false,
+        step: 1
     }
 
     nextStep = () => {
