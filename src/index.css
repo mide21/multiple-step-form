@@ -49,3 +49,16 @@ body {
 .MuiListItemText-multiline {
   text-align: center !important;
 }
+
+.MuiButtonBase-root {
+  margin: 2.5rem auto !important;
+}
+
+.MuiFormControl-root {
+  font-size: 1.0625rem !important;
+  margin-top: 3.75rem !important;
+}
+
+.MuiMobileStepper-root {
+  background-color: #f3f3f3 !important;
+}
