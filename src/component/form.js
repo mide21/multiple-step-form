@@ -48,7 +48,7 @@ export class Form extends Component {
         const { step, isPasswordShown } = this.state;
         const { firstName, lastName, email, occupation, city, bio, username, password } = this.state;
         const values = { firstName, lastName, email, occupation, city, bio, username, password }
-
+        const { classes, matches } = this.props;
 
         switch (step) {
             case 1:
@@ -57,6 +57,8 @@ export class Form extends Component {
                         nextStep={this.nextStep}
                         values={values}
                         handleChange={this.handleChange}
+                        classes={classes}
+                        matches={matches}
                     />
                 )
             case 2:
@@ -66,6 +68,8 @@ export class Form extends Component {
                         nextStep={this.nextStep}
                         values={values}
                         handleChange={this.handleChange}
+                        classes={classes}
+                        matches={matches}
                     />
                 )
             case 3:
@@ -77,6 +81,8 @@ export class Form extends Component {
                         handleChange={this.handleChange}
                         togglePasswordVisiblity={this.togglePasswordVisiblity}
                         isPasswordShown={isPasswordShown}
+                        classes={classes}
+                        matches={matches}
                     />
                 )
             case 4:
